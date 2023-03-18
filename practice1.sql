@@ -59,3 +59,19 @@ OFFSET (
     SELECT COUNT(nombre)/2
     FROM platzi.alumnos
 );
+
+SELECT *
+FROM platzi.alumnos
+WHERE id IN (1,5,6);
+
+SELECT *
+FROM platzi.alumnos
+WHERE id IN (
+    SELECT id FROM platzi.alumnos WHERE tutor_id = 30
+);
+
+SELECT *
+FROM platzi.alumnos
+WHERE id NOT IN (
+    SELECT id FROM platzi.alumnos WHERE tutor_id = 30
+);
